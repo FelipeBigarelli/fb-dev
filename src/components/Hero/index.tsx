@@ -57,7 +57,7 @@ const Hero = () => {
           transition={{ delay: 0.8, duration: 0.6 }}
         >
           <Lead>
-            Engenheiro de Software em formação pela UTFPR. Full Stack focado em React + Node, integrações, automações e sistemas de ponta a ponta.
+            Engenheiro de Software formado pela UTFPR. Full Stack focado em React + Node + TypeScript, integrações, automações e sistemas de ponta a ponta.
           </Lead> 
         </motion.div>
 
