@@ -15,7 +15,7 @@ export const BackgroundImage = styled.div`
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.3;
+  opacity: 0.7;
 `;
 
 export const BackgroundOverlay = styled.div`
