@@ -15,11 +15,7 @@ export const Grid = styled(MaxWidth)`
   }
 `;
 
-export const Left = styled.div`
-  height: -webkit-fill-available;
-  align-items: center;
-  display: flex;
-`;
+export const Left = styled.div``;
 
 export const Right = styled.div``;
 

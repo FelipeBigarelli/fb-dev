@@ -18,9 +18,6 @@ export const TabsWrap = styled.div`
   position: sticky;
   top: 92px;
 
-  height: -webkit-fill-available;
-  align-items: center;
-  display: flex;
 `;
 
 export const Tabs = styled.div`
