@@ -172,6 +172,8 @@ export const MiniStats = styled(motion.div)`
   gap: 10px;
   max-width: 720px;
 
+  padding-bottom: 32px;
+
   @media (max-width: 640px) {
     grid-template-columns: 1fr;
   }
@@ -200,7 +202,7 @@ export const StatCard = styled.div`
 
 export const ScrollHint = styled(motion.div)`
   position: absolute;
-  bottom: -80px;
+  bottom: -60px;
   left: 50%;
   transform: translateX(-50%);
 `;
