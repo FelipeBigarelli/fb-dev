@@ -8,13 +8,14 @@ export const MaxWidth = styled.div`
 `;
 
 export const Section = styled.section`
-  padding: 80px 0;
+  position: relative;
+  padding: 72px 0;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: 96px 0;
+    padding: 92px 0;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    padding: 120px 0;
+    padding: 108px 0;
   }
 `;

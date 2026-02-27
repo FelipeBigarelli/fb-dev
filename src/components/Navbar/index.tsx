@@ -17,7 +17,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -28,45 +28,32 @@ const Navbar = () => {
   };
 
   return (
-    <Nav
-      as={motion.nav}
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      $scrolled={scrolled}
-    >
+    <Nav as={motion.nav} initial={{ y: -60, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }} $scrolled={scrolled}>
       <NavInner>
-        <Brand onClick={() => handleClick('#hero')}>{'<FB />'}</Brand>
+        <Brand onClick={() => handleClick('#hero')}>
+          {'<'}<span>FB</span> /{'>'}
+        </Brand>
 
         <DesktopList>
           {navLinks.map((link) => (
             <li key={link.href}>
-              <NavItemButton onClick={() => handleClick(link.href)}>
-                {link.label}
-              </NavItemButton>
+              <NavItemButton onClick={() => handleClick(link.href)}>{link.label}</NavItemButton>
             </li>
           ))}
         </DesktopList>
 
         <ToggleButton onClick={() => setMobileOpen((v) => !v)} aria-label="Abrir menu">
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </ToggleButton>
       </NavInner>
 
       <AnimatePresence>
         {mobileOpen && (
-          <MobileMenu
-            as={motion.div}
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-          >
+          <MobileMenu as={motion.div} initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}>
             <ul>
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <NavItemButton onClick={() => handleClick(link.href)}>
-                    {link.label}
-                  </NavItemButton>
+                  <NavItemButton onClick={() => handleClick(link.href)}>{link.label}</NavItemButton>
                 </li>
               ))}
             </ul>

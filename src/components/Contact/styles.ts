@@ -7,51 +7,51 @@ export const SectionWrap = styled(Section)`
 
 export const Text = styled.p`
   color: ${({ theme }) => theme.colors.mutedForeground};
-  margin: 0 auto 32px;
-  max-width: 520px;
-  line-height: 1.75;
+  margin: 0 auto 24px;
+  max-width: 640px;
+  line-height: 1.8;
 `;
 
 export const Buttons = styled(MaxWidth)`
-  max-width: 720px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+  max-width: 760px;
+  display: grid;
+  gap: 12px;
 
-  @media (min-width: 640px) {
-    flex-direction: row;
-  }
+  @media (min-width: 700px) { grid-template-columns: 1fr 1fr; }
 `;
 
 const Base = styled.a`
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 12px 24px;
-  border-radius: 12px;
+  padding: 14px 18px;
+  border-radius: 14px;
   font-family: ${({ theme }) => theme.fonts.mono};
-  font-size: 13px;
-  transition: all 0.3s;
+  font-size: 12px;
+  transition: all 0.25s ease;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  background: linear-gradient(180deg, hsl(230 24% 13% / 0.82), hsl(230 20% 11% / 0.72));
+
+  &:hover { transform: translateY(-2px); }
 `;
 
 export const EmailButton = styled(Base)`
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.foreground};
+  border-color: hsl(193 95% 58% / 0.25);
+  box-shadow: 0 12px 30px hsl(193 95% 58% / 0.08);
 
   &:hover {
-    background: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.primaryForeground};
+    background: linear-gradient(135deg, hsl(193 95% 58% / 0.16), hsl(274 85% 68% / 0.12));
+    border-color: hsl(193 95% 58% / 0.35);
   }
 `;
 
 export const PhoneButton = styled(Base)`
-  border: 1px solid ${({ theme }) => theme.colors.border};
   color: ${({ theme }) => theme.colors.mutedForeground};
 
   &:hover {
-    border-color: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.foreground};
+    border-color: hsl(274 85% 68% / 0.28);
   }
 `;
