@@ -200,7 +200,7 @@ export const StatCard = styled.div`
 
 export const ScrollHint = styled(motion.div)`
   position: absolute;
-  bottom: 20px;
+  bottom: -80px;
   left: 50%;
   transform: translateX(-50%);
 `;
